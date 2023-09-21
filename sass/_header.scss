@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#header {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/mainvisual-pc.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 80px;
+    margin-bottom: 180px;
+    position: relative;
+    
+    @include bs.mq {
+        background-image: url(../img/mainvisual-sp.jpg);
+        padding: 20px;
+        margin-bottom: 80px;
+    }
+    
+    .site-title {
+        margin-left: 60px;
+        
+        img {
+            width: 40px;
+        }
+    }
+    
+    nav {
+        @include bs.rl; // 縦書き l <- r
+        
+        .nav-list {
+            li {
+                margin-left: 25px;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .store-button {
+        @include bs.rl; // 縦書き l <- r
+        display: inline-block;
+        background-color: rgba(bs.$white-color, 20%);
+        position: absolute;
+        left: 40px;
+        bottom: 30px;
+
+        @include bs.mq {
+            left: 20px;
+            bottom: 20px;
+        }
+
+        a {
+            display: block;
+            border: 1px solid bs.$button-border-color;
+            margin: 8px;
+            padding: 27px 18px;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+
+}

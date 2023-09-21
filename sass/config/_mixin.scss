@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// 縦書き : l <- r
+@mixin rl {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+}
+
+// media query
+$breakPoints: 768px;
+
+@mixin mq {
+    @media screen and (max-width: $breakPoints) {
+        @content;
+    }
+}

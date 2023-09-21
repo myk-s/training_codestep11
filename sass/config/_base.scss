@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@forward "color";
+@forward "function";
+@forward "mixin";
+@use "color" as c;
+@use "function" as f;
+
+html {
+    font-size: 100%;
+}
+body {
+    background-color: c.$bg-color;
+    color: c.$font-color;
+    font-size: f.rem(16);
+    font-family: 'Noto Serif JP', serif;
+}
+a {
+    color: c.$white-color;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: top; // 画像の下の余白を消すため
+}
+li {
+    list-style: none;
+}
+
+.wrapper {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.site-title {
+    line-height: 1px;
+    display: inline-block;
+}
+.site-title a {
+    display: block;
+}
+.sec-title {
+    font-weight: normal;
+    line-height: 1;
+}
+.sec-title .ja {
+    font-size: f.rem(36);
+    letter-spacing: f.ls(100);
+}
+.sec-title .en {
+    font-size: f.rem(14);
+}
+.flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+}

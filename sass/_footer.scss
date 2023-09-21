@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#footer {
+    background-color: bs.$footer-bg-color;
+    padding: 80px 80px 30px;
+    position: relative;
+
+    @include bs.mq {
+        padding: 40px 20px 30px;
+    }
+
+    .flex-container {
+        margin-bottom: 8px;
+
+        @include bs.mq {
+            margin-bottom: 6px;
+        }
+        
+        .footer-logo {
+            display: block;
+            margin-left: 60px;
+
+            @include bs.mq {
+                margin-left: 25px;
+            }
+
+            img {
+                width: 40px;
+            }
+        }
+    
+        .footer-text {
+            @include bs.rl; // 縦書き
+            color: bs.$white-color;
+            font-size: bs.rem(14);
+            
+            &:first-of-type {
+                margin-left: 7px;
+            }
+
+            &:nth-of-type(2) {
+                margin-left: 60px;
+
+                @include bs.mq {
+                    margin-left: 25px;
+                }
+            }
+
+            a[href^="tel:"] {
+                pointer-events: none;
+
+                @include bs.mq {
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        .footer-list {
+            @include bs.rl; // 縦書き
+
+            li {
+                margin-left: 25px;
+
+                @include bs.mq {
+                    font-size: bs.rem(14);
+                    margin-left: 10px;
+                }
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .contact {
+            @include bs.rl; // 縦書き
+            color: bs.$white-color;
+            font-size: bs.rem(14);
+            position: absolute;
+            top: 77px;
+            left: 30px;
+
+            @include bs.mq {
+                top: 37px;
+                left: 20px;
+            }
+        }
+
+    }
+
+    .copy-right {
+        font-size: bs.rem(10);
+        color: bs.$white-color;
+        text-align: center;
+    }
+}

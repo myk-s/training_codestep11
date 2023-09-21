@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#map {
+    iframe {
+        width: 100%;
+    }
+}
